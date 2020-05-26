@@ -15,6 +15,7 @@ function main() {
 		<Provider store={createStoreWithMiddleware(reducers)}>
 			<BrowserRouter>
 				<Layout>
+					
 				</Layout>
 			</BrowserRouter>
 		</Provider>,
