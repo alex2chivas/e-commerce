@@ -3,9 +3,13 @@ import React from 'react';
 import SignInForm from './signinForm';
 
 const SignIn = () => {
+    const onSubmit = fields => {
+        console.log(fields)
+    }
+
     return (
         <div className='sign-in'>
-            < SignInForm className='sign-in__form'/>
+            < SignInForm onSubmit={onSubmit} className='sign-in__form'/>
         </div>
     );
 }
