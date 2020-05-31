@@ -24,6 +24,7 @@ const SignInForm = props => {
 				name='password'
 				component={FormInput}
 			/>
+			<div className='sign-in-form__line' />
 			<Field
 				className='sign-in-form__login'
 				onClick={() => console.log('trying to submit')}
