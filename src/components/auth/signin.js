@@ -1,17 +1,19 @@
 import React from 'react';
 
 import SignInForm from './signinForm';
+import PageTitle from '../pageTitle';
 
 const SignIn = () => {
-    const onSubmit = fields => {
-        console.log(fields)
-    }
+	const onSubmit = fields => {
+		console.log(fields);
+	};
 
-    return (
-        <div className='sign-in'>
-            < SignInForm onSubmit={onSubmit} className='sign-in__form'/>
-        </div>
-    );
-}
+	return (
+		<div className='sign-in'>
+			<PageTitle className='sign-in__page-title' title='Login' />
+			<SignInForm onSubmit={onSubmit} className='sign-in__form' />
+		</div>
+	);
+};
 
 export default SignIn;
