@@ -12,11 +12,11 @@ export const FormInput = props => {
 };
 
 export const FormButton = props => {
-	const { className, title, type, onClick, input } = props;
+	const { className, title, type, onClick, input, short } = props;
 
 	return (
-		<div className={`${className} form-button`}>
-			<button className={`form-button__button`} type={type} {...input} onClick={onClick}>
+		<div className={`${className} form-button =`}>
+			<button className={`form-button__button ${short ? "form-button__gray-button" : ""}`} type={type} {...input} onClick={onClick}>
 				{title}
 			</button>
 		</div>
