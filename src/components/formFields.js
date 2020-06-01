@@ -20,5 +20,5 @@ export const FormButton = props => {
 				{title}
 			</button>
 		</div>
-	);
+	); 
 };
