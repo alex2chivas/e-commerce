@@ -8,33 +8,25 @@ const SignInForm = props => {
 
 	return (
 		<form onSubmit={handleSubmit} className={`${className} sign-in-form`}>
-			<Field
-				className='sign-in-form__email'
+			<Field className='sign-in-form__email'
 				type='email'
 				title='Email'
 				placeholder='Email'
 				name='email'
-				component={FormInput}
-			/>
-			<Field
-				className='sign-in-form__password'
+				component={FormInput} />
+			<Field className='sign-in-form__password'
 				type='password'
 				title='Password'
 				placeholder='Password'
 				name='password'
-				component={FormInput}
-			/>
-			<div className='sign-in-form__line' />
-			<Field
-				className='sign-in-form__login'
-				onClick={() => console.log('trying to submit')}
+				component={FormInput} />
+			<div className='sign-in-form__line'></div>
+			<Field className='sign-in-form__login'
 				type='submit'
 				title='Login'
 				name='login'
-				component={FormButton}
-			/>
-		</form>
-	);
+				component={FormButton} />
+		</form>	);
 };
 
 export default reduxForm({

@@ -10,8 +10,10 @@ const SignIn = () => {
 
 	return (
 		<div className='sign-in'>
-			<PageTitle className='sign-in__page-title' title='Login' />
-			<SignInForm onSubmit={onSubmit} className='sign-in__form' />
+			<div className='sign-in'>
+				<PageTitle className='sign-in__page-title' title='Login' />
+				<SignInForm onSubmit={onSubmit} className='sign-in__form' />
+			</div>
 		</div>
 	);
 };
