@@ -7,6 +7,7 @@ import { Router, Switch, Route } from 'react-router-dom';
 import Layout from './components/layout';
 import Signin from './components/auth/signin';
 import Signup from './components/auth/signup';
+import Account from './components/account/account';
 import reducers from './reducers';
 
 const createStoreWithMiddleware = applyMiddleware()(compose((window.devToolsExtension ? window.devToolsExtension() : f => f) (createStore)));
@@ -23,6 +24,7 @@ function main() {
 						<Route path='/' exact component={Signin} />
 						<Route path='/signin' exact component={Signin} />
 						<Route path='/signup' exact component={Signup} />
+						<Route path='/account' exact component={Account} />
 					</Switch>
 				</Layout>
 			</Router>
