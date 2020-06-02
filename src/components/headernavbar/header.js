@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 const Header = props => {
 	return (
 		<div className='header'>
-			<img src='http://via.placeholder.com/50x50' />
+			<img className='header__img' src='http://via.placeholder.com/50x50' />
 			<div className='header__links'>
 				{
 					props.headerLinks.map((link, index) => {

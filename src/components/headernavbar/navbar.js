@@ -9,7 +9,7 @@ const Navbar = props => {
                 props.navbarLinks.map((link, index) => {
                     return (
                         <a 
-                            className='navbar__link'
+                            className={`navbar__link ${link.active ? "green-text" : ""}`}
                             key={index}
                             onClick={() => console.log('trying to switch tab')}
                             >

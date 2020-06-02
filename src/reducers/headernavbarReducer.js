@@ -11,10 +11,12 @@ const INITIAL_STATE = {
 	],
 	navbarLinks: [
 		{
-			title: 'account'
+            title: 'account',
+            active: true
 		},
 		{
-			title: 'purchase'
+            title: 'purchase',
+            active: false
 		}
 	]
 };
