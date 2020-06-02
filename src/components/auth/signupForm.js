@@ -7,21 +7,18 @@ import Details from '../details';
 
 const SignUpForm = props => {
     const { className, handleSubmit } = props;
-    const links = [
+    const info = [
         {
             _id: 0,
-            title: 'Not Registered? Create account here',
-            onClick: () => history.push('/signup')
+            title: 'At lease 6 characters',
         },
         {
             _id: 1,
-            title: 'Forgot account email?',
-            onClick: () => console.log('forgot email')
+            title: 'At least one number',
         },
         {
             _id: 2,
-            title: 'forgot password?',
-            onClick: () => console.log('forgot password')
+            title: 'At least one sylmbol',
         }
     ];
 
@@ -53,7 +50,7 @@ const SignUpForm = props => {
             />
 
             <Field
-                className='sign-up-form__confirm-password'
+                className='sign-up-form__confirm'
                 type='password'
                 title='Confirm Password'
                 placeholder='Confirm Password'
@@ -61,28 +58,26 @@ const SignUpForm = props => {
                 component={FormInput}
             />
 
-
-
-
-
             <div className='sign-up-form__line' />
             <Field
+                onClick={() => history.push('/account')}
                 className='sign-up-form__login'
                 type='submit'
-                title='Login'
+                title='Create Account'
                 name='login'
                 component={FormButton}
             />
 
             <Field
                 className='sign-up-form__back'
+                onClick={() => history.push('/signin')}
                 type='button'
                 title='Back'
                 name='back'
                 short={true}
                 component={FormButton}
             />
-            <Details className='sign-up-form__details' title='QuickLinks' links={links} />
+            <Details className='sign-up-form__details' title='Password Requirements' info={info} />
         </form>
     );
 };

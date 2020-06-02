@@ -45,6 +45,7 @@ const SignInForm = props => {
 			/>
 			<div className='sign-in-form__line' />
 			<Field
+				onClick={() => history.push('/account')}
 				className='sign-in-form__login'
 				type='submit'
 				title='Login'
