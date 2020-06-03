@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useEffect} from 'react';
+import { connect } from 'react-redux';
 
 import SignInForm from './signinForm';
 import PageTitle from '../pageTitle';
+import * as actions from '../../actions';
 
-const SignIn = () => {
+const SignIn = props => {
+	useEffect(() => {
+		props.setHeaderLinks([]);
+		props.setNavbarLinks([]);
+
+	}, []);
+
 	const onSubmit = fields => {
 		console.log(fields);
 	};
@@ -18,4 +26,4 @@ const SignIn = () => {
 	);
 };
 
-export default SignIn;
+export default connect(null, actions)(SignIn);

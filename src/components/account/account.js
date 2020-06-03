@@ -20,9 +20,22 @@ const navbarLinks = [
 	}
 ];
 
+const headerLinks = [
+    {
+        _id: 0,
+        title: 'Shop',
+        path: '/shop'
+    },
+    {
+        _id: 1,
+        title: 'Logout',
+        path: '/'
+    }
+]
+
 const Account = props => {
 	useEffect(() => {
-		props.setHeaderLinks([]);
+        props.setHeaderLinks(headerLinks);
 		props.setNavbarLinks(navbarLinks);
 	}, []);
 
