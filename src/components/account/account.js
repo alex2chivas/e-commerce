@@ -9,13 +9,13 @@ const navbarLinks = [
 	{
 		_id: 0,
 		title: 'Purchase History',
-		active: false,
+		active: true,
 		component: <PurchaseHistory />
 	},
 	{
 		_id: 1,
 		title: 'Account information',
-		active: true,
+		active: false,
 		component: <AccountInformation />
 	}
 ];
@@ -51,7 +51,7 @@ const Account = props => {
 		return jsx;
 	};
 
-	return <div>{renderContent()}</div>;
+	return <div className='account'>{renderContent()}</div>;
 };
 
 const mapStateToProps = state => {
