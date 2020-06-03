@@ -1,4 +1,4 @@
-import React, { useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
 import SignInForm from './signinForm';
@@ -7,9 +7,8 @@ import * as actions from '../../actions';
 
 const SignIn = props => {
 	useEffect(() => {
-		props.setHeaderLinks([]);
 		props.setNavbarLinks([]);
-
+		props.setHeaderLinks([]);
 	}, []);
 
 	const onSubmit = fields => {
