@@ -8,14 +8,99 @@ export const fetchUserPurchases = () => {
         payload: [
             {
                 _id: 0,
-                title: 'purchase 1',
-                amount: 8.02
+                title: 'purchase 2',
+                total: 19.40,
+                orderNumber: 'A0021ANDJSJ6131',
+                orderDate: new Date(),
+                creditCard: '-000',
+                user: {
+                    name:'Alex Dame',
+                    shippingAddress: '528 Rain st'
+                }
             },
-
             {
                 _id: 1,
                 title: 'purchase 2',
-                amount: 19.02
+                total: 19.40,
+                orderNumber: 'A00216131',
+                orderDate: new Date(),
+                creditCard: '-000',
+                user: {
+                    name:'Frank Tiller',
+                    shippingAddress: '1234 west state st'
+                }
+            },
+            {
+                _id: 2,
+                title: 'purchase 2',
+                total: 19.40,
+                orderNumber: 'A0021DFHL31',
+                orderDate: new Date(),
+                creditCard: '-000',
+                user: {
+                    name:'Rob Sincere',
+                    shippingAddress: '1234 west state st'
+                }
+            },
+            {
+                _id: 3,
+                title: 'purchase 2',
+                total: 19.40,
+                orderNumber: 'A002168551',
+                orderDate: new Date(),
+                creditCard: '-000',
+                user: {
+                    name:'Sam Flores',
+                    shippingAddress: '5568 Long Island'
+                }
+            },
+            {
+                _id: 4,
+                title: 'purchase 2',
+                total: 19.40,
+                orderNumber: 'A00216131351',
+                orderDate: new Date(),
+                creditCard: '-000',
+                user: {
+                    name:'Miller Song',
+                    shippingAddress: '1234 west state st'
+                }
+            },
+            {
+                _id: 5,
+                title: 'purchase 2',
+                total: 19.40,
+                orderNumber: 'A00216131SJRUE',
+                orderDate: new Date(),
+                creditCard: '-000',
+                user: {
+                    name:'Leslie 3rd',
+                    shippingAddress: '1234 west state st'
+                }
+            },
+            {
+                _id: 6,
+                title: 'purchase 2',
+                total: 19.40,
+                orderNumber: 'A00216131323OP',
+                orderDate: new Date(),
+                creditCard: '-000',
+                user: {
+                    name:'Thinker John',
+                    shippingAddress: '1234 west state st'
+                }
+            },
+            {
+                _id: 7,
+                title: 'purchase 3',
+                total: 19.40,
+                orderNumber: 'A0021613131D3',
+                orderDate: new Date(),
+                creditCard: '-000',
+                user: {
+                    name:'JOhn Miller',
+                    shippingAddress: '1234 west state st'
+                }
             }
         ]
     })
