@@ -1,13 +1,59 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
+const PurchaseDetailLabel = ({ className, title, value }) => {
+	return (
+		<div className={`${className} purchase-detail-label`}>
+			<div className='purchase-detail-label__title'>{title}</div>
+			<div className='purchase-detail-label__value'>{value}</div>
+		</div>
+	);
+};
+
+// total: 19.4,
+//  creditCard: '-000',
+
 
 const PurchaseDetail = props => {
-    const { className } = props;
+    const { className, orderNumber, orderDate, total, creditCard, user } = props;
+    const { name, shippingAddress } = user;
 
-    return (
-        <div className={`${className} purchase-detail`}>
-            Purchase detail goes here
-        </div>
-    );
+	return (
+		<div className={`${className} purchase-detail`}>
+			<PurchaseDetailLabel
+				className='purchase-detail__order-number'
+				title='Order Number'
+				value={orderNumber}
+			/>
+			<PurchaseDetailLabel
+				className='purchase-detail__order-date'
+				title='order Number'
+				value={orderDate}
+			/>
+			<PurchaseDetailLabel
+				className='purchase-detail__shiping'
+				title='Shipping Address'
+                value={`${name}\n ${shippingAddress}`}
+			/>
+			<PurchaseDetailLabel
+				className='purchase-detail__total'
+				title='Total'
+                value={total}
+			/>
+			<PurchaseDetailLabel
+				className='purchase-detail__credit-card'
+				title='Cardit Card'
+                value={creditCard}
+			/>
+		</div>
+	);
+};
+
+const mapStateToProps = state => {
+    const { purchaseDetail } = state.user 
+    return {
+        ...purchaseDetail
+    }
 }
 
-export default PurchaseDetail;
+export default connect(mapStateToProps)(PurchaseDetail);
