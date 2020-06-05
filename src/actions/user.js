@@ -103,7 +103,7 @@ export const fetchUserPurchases = () => {
 				orderDate: new Date().toDateString(),
 				creditCard: '-000',
 				user: {
-					name: 'JOhn Miller',
+					name: 'John Miller',
 					shippingAddress: '1234 west state st'
 				}
 			}
