@@ -2,7 +2,7 @@ import React from 'react';
 import { reduxForm, Field } from 'redux-form';
 
 import history from '../../history';
-import { FormInput, FormButton } from '../formFields';
+import { FormInput, FormButton, LongGrayButton } from '../formFields';
 
 const AccountInformationForm = props => {
 	const { className, handleSubmit } = props;
@@ -60,6 +60,16 @@ const AccountInformationForm = props => {
 				component={FormInput}
 			/>
 
+            <Field
+                onClick={() => console.log('trying to show password')}
+                className='account-information-form__change-password'
+                type='button'
+                labelTitle='Password'
+                title='Change password'
+                name='change-password'
+                component={LongGrayButton}
+            />
+
 			{/* <Field
 				className='account-information-form__password'
 				type='password'
@@ -67,14 +77,6 @@ const AccountInformationForm = props => {
 				placeholder='Password'
 				name='password'
 				component={FormInput}
-			/>
-			<Field
-				onClick={() => history.push('/account')}
-				className='account-information-form__login'
-				type='submit'
-				title='Login'
-				name='login'
-				component={FormButton}
 			/> */}
 		</form>
 	);

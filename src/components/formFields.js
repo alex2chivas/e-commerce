@@ -16,9 +16,27 @@ export const FormButton = props => {
 
 	return (
 		<div className={`${className} form-button =`}>
-			<button className={`form-button__button ${short ? "form-button__gray-button" : ""}`} type={type} {...input} onClick={onClick}>
+			<button
+				className={`form-button__button ${short ? 'form-button__gray-button' : ''}`}
+				type={type}
+				{...input}
+				onClick={onClick}
+			>
 				{title}
 			</button>
 		</div>
-	); 
+	);
+};
+
+export const LongGrayButton = props => {
+	const { className, labelTitle, title, type, onClick, input } = props;
+
+	return (
+		<div className={`${className} form-button-long-gray`}>
+			<label className='form-button-long-gray__label'>{labelTitle}</label>
+			<button className={`form-button-long-gray__button`} type={type} {...input} onClick={onClick}>
+				{title}
+			</button>
+		</div>
+	);
 };
