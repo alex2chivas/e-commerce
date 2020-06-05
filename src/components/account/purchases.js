@@ -14,10 +14,14 @@ const Purchases = props => {
 		<div className={`${className} purchases`}>
 			{purchases.map(purchase => {
 				return (
-					<div key={purchase._id} className ='purchases__purchase purchase'>
+					<a
+						onClick={() => props.setPurchaseDetail(purchase._id)}
+						key={purchase._id}
+						className='purchases__purchase purchase'
+					>
 						<img className='purchase__img' src='http://via.placeholder.com/80x80' />
-					</div>		
-				)
+					</a>
+				);
 			})}
 		</div>
 	);
