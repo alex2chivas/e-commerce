@@ -3,6 +3,12 @@
 		grid-column: 1/-1;
 		grid-row: products-s/products-e;
 		overflow-y: scroll;
+
+		display: grid;
+		grid-template-rows: repeat(auto-fit, 80px);
+		grid-row-gap: 12px;
+
+		align-self: center;
 	}
 
 	&__line {
@@ -11,10 +17,12 @@
 		border-top: 1px solid #ccc;
 		margin-bottom: 24px;
 	}
+
 	&__back {
 		grid-row: buttons-s/buttons-e;
 		grid-column: back-s/back-e;
 	}
+
 	&__proceed {
 		grid-row: buttons-s/buttons-e;
 		grid-column: proceed-s/proceed-e;
