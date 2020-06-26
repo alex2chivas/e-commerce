@@ -1,21 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware, compose } from 'redux';
-import { Router, Switch, Route } from 'react-router-dom';
+import {Provider} from 'react-redux';
+import {createStore, applyMiddleware, compose} from 'redux';
+import {Router, Switch, Route} from 'react-router-dom';
 
 import Layout from './components/layout';
 import Signin from './components/auth/signin';
 import Signup from './components/auth/signup';
 import Account from './components/account/account';
 import reducers from './reducers';
+import Shop from './components/shop/shop';
+import Review from './components/order/review';
 
-const createStoreWithMiddleware = applyMiddleware()(compose((window.devToolsExtension ? window.devToolsExtension() : f => f) (createStore)));
+const createStoreWithMiddleware = applyMiddleware()(
+	compose((window.devToolsExtension ? window.devToolsExtension() : (f) => f)(createStore))
+);
 
 import './style/main.scss';
 import history from './history';
 
-function main() {
+function main () {
 	ReactDOM.render(
 		<Provider store={createStoreWithMiddleware(reducers)}>
 			<Router history={history}>
@@ -25,6 +29,8 @@ function main() {
 						<Route path='/signin' exact component={Signin} />
 						<Route path='/signup' exact component={Signup} />
 						<Route path='/account' exact component={Account} />
+						<Route path='/shop' exact component={Shop} />
+						<Route path='/order/review' exact component={Review} />
 					</Switch>
 				</Layout>
 			</Router>

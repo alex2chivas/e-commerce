@@ -3,7 +3,14 @@ import { connect } from 'react-redux';
 
 import * as actions from '../../actions/headernavbar';
 
-const Navbar = props => {
+const Navbar = (props) => {
+	const handleOnClick = (link) => {
+		props.changeNavbarActive(link._id);
+		if (props.onClick) {
+			props.onClick(link._id);
+		}
+	};
+
 	return (
 		<div className='navbar'>
 			{props.navbarLinks.map((link, index) => {
@@ -11,7 +18,7 @@ const Navbar = props => {
 					<a
 						className={`navbar__link ${link.active ? 'green-text' : ''}`}
 						key={index}
-						onClick={() => props.changeNavbarActive(link._id)}
+						onClick={() => handleOnClick(link)}
 					>
 						{link.title}
 					</a>
@@ -21,10 +28,11 @@ const Navbar = props => {
 	);
 };
 
-const mapStateToProps = state => {
-	const { navbarLinks } = state.headerNavbar;
+const mapStateToProps = (state) => {
+	const { navbarLinks, onClick } = state.headerNavbar;
 	return {
-		navbarLinks
+		navbarLinks,
+		onClick,
 	};
 };
 
