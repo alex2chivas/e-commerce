@@ -7,7 +7,7 @@ import * as actions from '../../actions';
 
 import CartButton from './cartButton';
 
-const CartContent = ({className, products}) => {
+const CartContent = ({className, products, props}) => {
 	let count = products.length;
 	let productsJSX = products.map((product) => <CartProduct {...product} key={product._id} />);
 
@@ -15,21 +15,29 @@ const CartContent = ({className, products}) => {
 		<div className={`${className} cart-content`}>
 			<div className='cart-content__title'>Cart ({count})</div>
 			<div className='cart-content__products'>{productsJSX}</div>
-			<CartFooter className='cart-content__footer' products={products} />
+			<CartFooter className='cart-content__footer' products={products} props={props}/>
 		</div>
 	);
 };
 
-const CartFooter = ({className, products}) => {
-	const price = 7.96;
+const CartFooter = ({className, products, props}) => {
+
+	const subtotal = () => {
+		let sub = 0;
+		props.cartProducts.map(cartProduct => {
+			sub += cartProduct.quantity * cartProduct.product.price;
+		});
+		return sub;
+	};
+
 	return (
 		<div className={`${className} cart-footer`}>
 			<a onClick={() => history.push('/order/review')} className='cart-footer__checkout'>
 				Checkout
 			</a>
 			<div className='cart-footer__subtotal'>Subtotal</div>
-			<div className='cart-footer__price'>${price}</div>
-		</div>
+			<div className='cart-footer__price'>${subtotal()}</div>
+		</div>	
 	);
 };
 
@@ -51,7 +59,7 @@ const ShopCart = (props) => {
 	return (
 		<div id='shop-cart' className={`${className} shop-cart cart-hidden`}>
 			<CartButton onClick={handleRemoveCart} className='shop-cart__toggle' icon='fas fa-times' />
-			<CartContent className='shop-cart__content' products={props.cartProducts} />
+			<CartContent className='shop-cart__content' products={props.cartProducts} props={props}/>
 		</div>
 	);
 };
