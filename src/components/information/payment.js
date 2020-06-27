@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import PageTitle from '../pageTitle';
 import * as actions from '../../actions';
 
+import PaymentForm from './paymentForm';
+
 const Payment = props => {
     useEffect(() => {
         props.setNavbarLinks([]);
@@ -18,7 +20,7 @@ const Payment = props => {
         <div className='sign-in'>
             <div className='sign-in'>
                 <PageTitle className='sign-in__page-title' title='Payment Information' />
-                {/* <PaymentForm onSubmit={onSubmit} className='sign-in__form' /> */}
+                <PaymentForm onSubmit={onSubmit} className='sign-in__form' />
             </div>
         </div>
     );
