@@ -19,7 +19,7 @@ const ReviewForm = React.memo(props => {
 			<ReviewProducts className='review-form__products' />
 			<div className='review-form__line' />
 			<Field
-				onClick={() => history.push('/signin')}
+				onClick={() => history.push('/information/shipping')}
 				className='review-form__proceed'
 				type='submit'
 				title='Proceed to Checkout'
