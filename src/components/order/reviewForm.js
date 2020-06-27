@@ -1,15 +1,20 @@
 import React from 'react';
-import {reduxForm, Field} from 'redux-form';
+import { reduxForm, Field } from 'redux-form';
 
 import history from '../../history';
 
-import {FormButton} from '../formFields';
+import { FormButton } from '../formFields';
 import ReviewProducts from './reviewProducts';
 
-const ReviewForm = (props) => {
-	const {className, handleSubmit} = props;
+const ReviewForm = props => {
+	const { className, handleSubmit } = props;
 	return (
 		<form onSubmit={handleSubmit} className={`${className} review-form`}>
+			<div className='review-form__legend'>
+				<div className='review-form__legend__name'>Name</div>
+				<div className='review-form__legend__quantity'>Quantity</div>
+				<div className='review-form__legend__price'>Price</div>
+			</div>
 			<ReviewProducts className='review-form__products' />
 			<div className='review-form__line' />
 			<Field
