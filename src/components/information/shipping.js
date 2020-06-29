@@ -17,13 +17,11 @@ const Shipping = props => {
     };
 
     return (
-        <div className='shipping-form'>
-            <div className='shipping-form'>
-                <PageTitle className='shipping-form__page-title' title='Shipping Address' />
-                <ShippingForm onSubmit={onSubmit} className='shipping-form__form' />
-            </div>
-        </div>
-    );
+        <div className='shipping'>
+            <PageTitle className='shipping__page-title' title='Shipping Address' />
+            <ShippingForm onSubmit={onSubmit} className='shipping__form' />
+        </div>    
+        );
 };
 
 export default connect(null, actions)(Shipping);
