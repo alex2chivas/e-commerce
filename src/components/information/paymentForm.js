@@ -66,8 +66,8 @@ const PaymentForm = props => {
 			<OrderSummary className='payment-form__order-summary' />
 			<div className='payment-form__shipping-info shipping-info'>
 				<UnderlinedTitle className='payment-info__title' title='Shipping To' />
-				<div className='shipping-info__name small-text'>{props.name}</div>
-				<div className='shipping-info__address small-text'>{props.address}</div>
+				<div className='shipping-info__name small-text'>Alexis Flores</div>
+				<div className='shipping-info__address small-text'>1234 Addres goes here</div>
 			</div>
 		</form>
 	);

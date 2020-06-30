@@ -19,9 +19,16 @@ const Payment = props => {
 	return (
 		<div className='payment'>
 			<PageTitle className='payment__page-title' title='Payment Information' />
-			<PaymentForm onSubmit={onSubmit} className='payment__form' />
+			<PaymentForm onSubmit={onSubmit} className='payment__form'/>
 		</div>
 	);
 };
+
+// const mapStateToProps = state => {
+//     const {name, address} = state.form.values
+//     return {
+//         name, address
+//     }
+// }
 
 export default connect(null, actions)(Payment);
