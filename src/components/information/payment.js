@@ -7,23 +7,21 @@ import * as actions from '../../actions';
 import PaymentForm from './paymentForm';
 
 const Payment = props => {
-    useEffect(() => {
-        props.setNavbarLinks([]);
-        props.setHeaderLinks([]);
-    }, []);
+	useEffect(() => {
+		props.setNavbarLinks([]);
+		props.setHeaderLinks([]);
+	}, []);
 
-    const onSubmit = fields => {
-        console.log(fields);
-    };
+	const onSubmit = fields => {
+		console.log(fields);
+	};
 
-    return (
-        <div className='sign-in'>
-            <div className='sign-in'>
-                <PageTitle className='sign-in__page-title' title='Payment Information' />
-                <PaymentForm onSubmit={onSubmit} className='sign-in__form' />
-            </div>
-        </div>
-    );
+	return (
+		<div className='payment'>
+			<PageTitle className='payment__page-title' title='Payment Information' />
+			<PaymentForm onSubmit={onSubmit} className='payment__form' />
+		</div>
+	);
 };
 
 export default connect(null, actions)(Payment);

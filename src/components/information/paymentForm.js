@@ -3,6 +3,8 @@ import { reduxForm, Field } from 'redux-form';
 
 import history from '../../history';
 import { FormInput, FormButton } from '../formFields';
+import OrderSummary from './orderSummary';
+import { UnderlinedTitle} from './infoHelp';
 
 const PaymentForm = props => {
 	const { className, handleSubmit } = props;
@@ -61,6 +63,12 @@ const PaymentForm = props => {
 				short={true}
 				component={FormButton}
 			/>
+			<OrderSummary className='payment-form__order-summary' />
+			<div className='payment-form__shipping-info shipping-info'>
+				<UnderlinedTitle className='payment-info__title' title='Shipping To' />
+				<div className='shipping-info__name small-text'>{props.name}</div>
+				<div className='shipping-info__address small-text'>{props.address}</div>
+			</div>
 		</form>
 	);
 };
