@@ -3,6 +3,7 @@ import { reduxForm, Field } from 'redux-form';
 
 import history from '../../history';
 import { FormInput, FormButton } from '../formFields';
+import OrderSummary from './orderSummary';
 
 const ShippingForm = props => {
 	const { className, handleSubmit } = props;
@@ -68,6 +69,7 @@ const ShippingForm = props => {
 				short={true}
 				component={FormButton}
 			/>
+			<OrderSummary className='shipping-form__summary'/>
 		</form>
 	);
 };
